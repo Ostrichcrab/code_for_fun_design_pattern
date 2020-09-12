@@ -2,7 +2,7 @@ package darklaunch;
 
 import com.google.common.io.CharStreams;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import java.io.*;
 import java.util.HashMap;
@@ -12,6 +12,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 
@@ -48,7 +49,7 @@ public class DarkLaunch {
           String text = CharStreams.toString(new InputStreamReader(in, "UTF-8"));
           System.out.println(text);
         if (in != null) {
-          Yaml yaml = new Yaml(); // why bug ?
+          Yaml yaml = new Yaml();
           ruleConfig = yaml.loadAs(in, DarkRuleConfig.class);
           DarkRuleConfig me = yaml.loadAs(new FileInputStream(new File("dark-rule.yaml")), DarkRuleConfig.class);
           ruleConfig = me;
