@@ -1,1 +1,0 @@
-# code_for_fun_design_pattern
